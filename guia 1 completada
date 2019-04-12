@@ -1,0 +1,177 @@
+Module Program
+    Sub Main()
+        Console.WriteLine(“elija un numero”)
+        Console.WriteLine(“1. multiplo”)
+        Console.WriteLine(“2.resultado de la materia”)
+        Console.WriteLine(“3. temperatura”)
+        Console.WriteLine(“4.tick tock”)
+        Console.WriteLine(“5 personaje favorito”)
+        Dim resp = Console.ReadLine
+        If resp = 1 Then
+            Console.WriteLine("1. saber si es multiplo de 5")
+            Console.WriteLine("2. saber si es multiplo de 3")
+            Dim res = Console.ReadLine()
+            If res = 1 Then
+                Console.WriteLine("escriba un nemero para saber si es multiplo de 5")
+                Dim num1 = Console.ReadLine()
+                If num1 Mod 5 = 0 Then
+                    Console.WriteLine("su numero es multiplo de 5")
+                Else Console.WriteLine("su numero no es multiplo de 5")
+                    Console.ReadLine()
+                End If
+            ElseIf res = 2 Then
+                Console.WriteLine("escriba un nemero para saber si es multiplo de 3")
+                Dim num1 = Console.ReadLine()
+                If num1 Mod 3 = 0 Then
+                    Console.WriteLine("su numero es multiplo de 3")
+                Else Console.WriteLine("su numero no es multiplo de 3")
+                    Console.ReadLine()
+                End If
+            End If
+            Console.ReadLine()
+        ElseIf resp = 2 Then
+
+            Console.WriteLine("escriba el  nombre completo")
+            Dim nom As String = Console.ReadLine()
+
+            Console.WriteLine("escriba la asistencia en formato entero ")
+            Dim asiste As Integer = Console.ReadLine()
+
+            Console.WriteLine("escriba la nota")
+            Dim nota = Console.ReadLine()
+
+            If (asiste >= 75 And asiste <= 100) And (nota >= 6 And nota <= 10) Then
+                Console.WriteLine("el estudiante " & nom & " aprovo con calificacion " & nota & " y asistencia " & asiste & "%")
+                Console.ReadLine()
+
+            ElseIf (asiste >= 0 And asiste < 75) And (nota < 6 And nota > 0) Then
+                Console.WriteLine("el estudiante " & nom & " reprovo con calificacion " & nota & " y asistencia " & asiste & "%")
+                Console.ReadLine()
+
+            ElseIf (asiste >= 0 And asiste < 75) And (nota >= 6 And nota <= 10) Then
+                Console.WriteLine("el estudiante " & nom & " reprovo con calificacion " & nota & " y asistencia " & asiste & "%")
+                Console.ReadLine()
+
+            ElseIf (asiste >= 75 And asiste <= 100) And (nota >= 6 And nota <= 10) Then
+                Console.WriteLine("el estudiante " & nom & " reprovo con calificacion " & nota & " y asistencia " & asiste & "%")
+                Console.ReadLine()
+            End If
+        ElseIf resp = 3 Then
+            Dim clima As String
+            Console.WriteLine("como esta el clima frio, caloroso,calido,lluvioso")
+            clima = Console.ReadLine()
+            Select Case clima
+                Case "frio"
+                    Console.WriteLine("tomese un cafecito y abrigese")
+
+                Case "caloroso"
+                    Console.WriteLine("tome agua elada salgo a la naturaleza o valla a la playa")
+
+                Case "calido"
+                    Console.WriteLine("es un buen dia para salir con la familia sin lluvias")
+
+                Case "lluvioso"
+                    Console.WriteLine("si va asalir no olvide su paragua")
+
+            End Select
+            Console.ReadLine()
+
+        ElseIf resp = 4 Then
+            Dim contador = 0
+            Console.WriteLine("en los primeros 100 intentos si le aparece tic es multiplo de 3")
+            Console.WriteLine("y si le aparece toc es multiplo de 5 y si le aparece tic-toc es ,multiplo de 3 y 5")
+
+            While contador <= 100
+                If (contador Mod 3 = 0) And (contador Mod 5 = 0) Then
+                    Console.WriteLine("tic-tac")
+                ElseIf contador Mod 5 = 0 Then
+                    Console.WriteLine("toc")
+                ElseIf contador Mod 3 = 0 Then
+                    Console.WriteLine("tic")
+                ElseIf (contador Mod 3 <> 0) And (contador Mod 5 <> 0) Then
+                    Console.WriteLine(contador)
+                End If
+                contador = contador + 1
+            End While
+            Console.ReadLine()
+
+        ElseIf resp = 5 Then
+            Dim salir = 1
+            Dim favor
+            While salir <= 3
+                Console.WriteLine("elija un grupo y  luego un personaje favorito")
+                Console.WriteLine("")
+                Console.WriteLine("1.deportistas")
+                Console.WriteLine("2.generos musicales")
+                Console.WriteLine("3.serie")
+                Console.WriteLine("")
+                Dim res As Integer = Console.ReadLine
+                If res = 1 Then
+
+                    Dim pers = "deportistas"
+                    Console.WriteLine("1leonel messi")
+                    Console.WriteLine("2neymar")
+                    Console.WriteLine("3cristiano ronaldo")
+                    Console.WriteLine("4 marcelo")
+                    Console.WriteLine("ingrese su personaje favorito")
+                    Console.WriteLine("")
+                    Dim favo = Console.ReadLine()
+                    If favo = 1 Then
+                        favor = "leonel messi"
+                    ElseIf favo = 2 Then
+                        favor = "neymar"
+                    ElseIf favo = 3 Then
+                        favor = "cristiano ronaldo"
+                    ElseIf favo = 4 Then
+                        favor = "marcelo"
+                    End If
+                    Console.WriteLine("su grupo favorito es " & pers & " y su personaje favorito es " & favor)
+                    Console.ReadLine()
+
+                ElseIf res = 2 Then
+                    Console.WriteLine("ingrese su personaje favorito")
+                    Dim pers = "generos musicales"
+                    Console.WriteLine("1.rock")
+                    Console.WriteLine("2.regueton")
+                    Console.WriteLine("3.reggue")
+                    Console.WriteLine("4.romanticas")
+                    Console.WriteLine("")
+                    Dim favo = Console.ReadLine()
+                    If favo = 1 Then
+                        favor = "rock"
+                    ElseIf favo = 2 Then
+                        favor = "regueton"
+                    ElseIf favo = 3 Then
+                        favor = "regue"
+                    ElseIf favo = 4 Then
+                        favor = "romanticas"
+                    End If
+
+                    Console.WriteLine("su grupo favorito es " & pers & " y su personaje favorito es " & favor)
+                    Console.ReadLine()
+                ElseIf res = 3 Then
+                    Console.WriteLine("ingrese su personaje favorito")
+                    Dim pers = "serie"
+                    Console.WriteLine("1.drake y josh")
+                    Console.WriteLine("2.dragon ball")
+                    Console.WriteLine("3.naruto")
+                    Dim favo = Console.ReadLine()
+                    If favo = 1 Then
+                        favor = "drake y josh"
+                    ElseIf favo = 2 Then
+                        favor = "dragon ball"
+                    ElseIf favo = 3 Then
+                        favor = "naruto"
+                    End If
+
+                    Console.WriteLine("su grupo favorito es " & pers & " y su personaje favorito es " & favor)
+                    Console.ReadLine()
+                End If
+                salir = salir + 1
+
+            End While
+            Console.ReadLine()
+
+        End If
+    End Sub
+End Module
